@@ -2,13 +2,16 @@ import TodoItem from "./components/TodoItem.js";
 
 export const App = {
 
+    name: 'App',
+
     components: { TodoItem },
 
     data () {
         return {
             todos: [
                 {id: 1, content: "Vue.js 공부하기", time_limit: "2020-09-30"}
-            ]
+            ],
+            isOpened: false,
         }
     },
 
@@ -42,12 +45,14 @@ export const App = {
                 
             </div>
             
+            <modal-popup v-if="isOpened"></modal-popup>
+            
         </div>
     `,
 
     methods: {
         openModal (e) {
-
+            this.isOpened = true
         }
     },
 

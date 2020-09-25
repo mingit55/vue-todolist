@@ -2,6 +2,7 @@
  * 할 일 목록 컴포넌트
  */
 export default {
+  name: 'TodoItem',
   props: ['item', 'removeItem'],
   template: `
       <div class="list__item">
