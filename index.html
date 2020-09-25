@@ -9,69 +9,12 @@
     <!-- 스타일링 파일 -->
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
-    <!-- 자바스크립트 파일 -->
-    <script src="./js/common.js"></script>
-    <script src="./js/App.js"></script>
-    <!-- Vue 개발버전, 도움되는 콘솔 경고를 포함 -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
 
-        <!-- 리스트 영역 -->
-        <div class="list">
+    <div id="root"></div>
 
-            <div class="title">목록</div>
-
-            <div class="list__content">
-
-                <todo
-                    v-for="todo in todos"
-                    v-bind:item="todo"
-                    v-bind:key="todo.id"></todo>
-
-                <div class="list__item list__item--insert">
-                    <p>새로운 할 일을 추가할까요?</p>
-                    <button class="btn-underline" v-on:click="openModal" data-target="#insert-form">추가</button>
-                </div>
-
-            </div>
-
-        </div>
-        <!-- /리스트 영역 -->
-
-        <!-- 콘텐츠 영역 -->
-        <div class="view">
-
-            <div class="title">내용</div>
-
-            <div class="view__content"></div>
-            
-        </div>
-        <!-- /콘텐츠 영역 -->
-
-    </div>
-
-    <!-- 모달 -->
-    <form id="insert-form" class="modal">
-        <div class="modal__content">
-            <div class="modal-header">
-                <div class="title">추가하기</div>
-            </div>
-            <div class="modal-group">
-                <label for="todo__content" class="modal-label">내용</label>
-                <textarea name="content" id="todo__contnet" cols="30" rows="3" class="modal-input"></textarea>
-            </div>
-            <div class="modal-group">
-                <label for="todo__content" class="modal-label">완료 기간</label>
-                <input type="date" name="limit_time" class="modal-input" data-type="date">
-            </div>
-            <div class="modal-footer">
-                <button class="btn-bordered">추가 완료</button>
-            </div>
-        </div>
-    </form>
-    <!-- /모달 -->
-    
+    <!-- 자바스크립트 파일 -->
+    <script src="./js/main.js" type="module"></script>
 </body>
 </html>
