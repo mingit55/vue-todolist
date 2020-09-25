@@ -1,7 +1,9 @@
-import {Todo} from "./components/Todo.js";
+import TodoItem from "./components/TodoItem.js";
 
-const App = {
-    components: { Todo },
+export const App = {
+
+    components: { TodoItem },
+
     data () {
         return {
             todos: [
@@ -9,17 +11,19 @@ const App = {
             ]
         }
     },
+
     template: `
-        <div>
+        <div id="app">
+        
             <div class="list">
     
                 <div class="title">목록</div>
     
                 <div class="list__content">
     
-                    <todo v-for="todo in todos"
-                          :item="todo"
-                          :key="todo.id" />
+                    <todo-item v-for="todo in todos"
+                              :item="todo"
+                              :key="todo.id" />
     
                     <div class="list__item list__item--insert">
                         <p>새로운 할 일을 추가할까요?</p>
@@ -29,6 +33,7 @@ const App = {
                 </div>
     
             </div>
+            
             <div class="view">
     
                 <div class="title">내용</div>
@@ -36,15 +41,14 @@ const App = {
                 <div class="view__content"></div>
                 
             </div>
+            
         </div>
-    `
+    `,
+
+    methods: {
+        openModal (e) {
+
+        }
+    },
+
 }
-
-
-/**
- * App
- */
-new Vue({
-    el: "#app",
-    components: { App },
-});
