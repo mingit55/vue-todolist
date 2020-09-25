@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/*
+# index.css - mingit55(2020-09-25)
+
+index.html에 포함되는 스타일링 코드가 포함된다.
+To do List의 할 일 목록과 내용과 관련된 코드이다.
+
+*/
+
+
+#app {
+    position: relative;
+    max-width: 998px;
+    margin: 150px auto;
+    padding: 0 -40px;
+    border-radius: 0.25em;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 콘텐츠 영역 */
+
+.view {
+    position: sticky;
+    top: 0;
+    margin: 0 20px;
+    width: 100%;
+    flex: 0 0 calc(60% - 40px);
+    max-width: calc(60% - 40px);
+    padding: 1em;
+    height: 450px;
+    background-color: #ffffff;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.089);
+}
+
+.view__content {
+    padding: 1em 0;
+}
+
+.view__content:empty::before {
+    content: '왼쪽 목록에서 할 일을 선택해 주세요!';
+    font-size: 1.2em;
+}
+
+/* /콘텐츠 영역 */
+
+
+
+/* 리스트 영역 */
+
+.list {
+    margin: 0 20px;
+    width: 100%;
+    flex: 0 0 calc(40% - 40px);
+    max-width: calc(40% - 40px);
+    min-height: 450px;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.089);
+}
+
+.list__content {
+    padding-top: 20px;
+}
+
+.list__item {
+    background-color: #ffc8a3;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list__item p {
+    max-width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.list__item--insert {
+    background-color: #fff6f1;
+}
+
+
+/* /리스트 영역 */
+
