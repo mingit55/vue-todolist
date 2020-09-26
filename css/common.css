@@ -165,6 +165,9 @@ body { background-color: #f7f7f7; color: #333333; }
 .btn-bordered:hover::before,
 .btn-bordered:hover::after { width: 100%; }
 
+.btn-filled { background-color: #e67e38; color: #fff; border: 1px solid #e67e38; }
+
+
 
 /* /버튼 :: btn (button) */
 

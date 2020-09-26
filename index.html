@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <!-- 자바스크립트 파일 -->
     <script src="./js/common.js"></script>
-    <script src="./js/App.js"></script>
+    <script src="./js/app.js"></script>
     <!-- Vue 개발버전, 도움되는 콘솔 경고를 포함 -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
@@ -26,6 +26,8 @@
             <div class="list__content">
 
                 <todo
+                    v-on:select="selectTodo"
+                    v-on:remove="removeTodo"
                     v-for="todo in todos"
                     v-bind:item="todo"
                     v-bind:key="todo.id"></todo>
@@ -45,33 +47,34 @@
 
             <div class="title">내용</div>
 
-            <div class="view__content"></div>
+            <div class="view__content">{{ currentView && currentView.content }}</div>
             
         </div>
         <!-- /콘텐츠 영역 -->
-
+        
+        <!-- 모달 -->
+        <form id="insert-form" class="modal" v-on:submit.prevent="insertTodo">
+            <div class="modal__content">
+                <div class="modal-header">
+                    <div class="title">추가하기</div>
+                </div>
+                <div class="modal-group">
+                    <label for="todo__content" class="modal-label">내용</label>
+                    <textarea name="content" id="todo__content" cols="30" rows="3" class="modal-input"></textarea>
+                </div>
+                <div class="modal-group">
+                    <label for="todo__limit" class="modal-label">완료 기간</label>
+                    <input type="date" id="todo__limit" name="limit_time" class="modal-input" data-type="date">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-bordered">추가 완료</button>
+                    <button class="btn-filled ml-2">닫기</button>
+                </div>
+            </div>
+        </form>
+        <!-- /모달 -->
     </div>
 
-    <!-- 모달 -->
-    <form id="insert-form" class="modal">
-        <div class="modal__content">
-            <div class="modal-header">
-                <div class="title">추가하기</div>
-            </div>
-            <div class="modal-group">
-                <label for="todo__content" class="modal-label">내용</label>
-                <textarea name="content" id="todo__contnet" cols="30" rows="3" class="modal-input"></textarea>
-            </div>
-            <div class="modal-group">
-                <label for="todo__content" class="modal-label">완료 기간</label>
-                <input type="date" name="limit_time" class="modal-input" data-type="date">
-            </div>
-            <div class="modal-footer">
-                <button class="btn-bordered">추가 완료</button>
-            </div>
-        </div>
-    </form>
-    <!-- /모달 -->
     
 </body>
 </html>

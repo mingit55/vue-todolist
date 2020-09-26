@@ -75,6 +75,7 @@ To do List의 할 일 목록과 내용과 관련된 코드이다.
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .list__item p {
