@@ -10,14 +10,17 @@ To do List의 할 일 목록과 내용과 관련된 코드이다.
 
 
 #app {
-    position: relative;
-    max-width: 998px;
     margin: 150px auto;
-    padding: 0 -40px;
+    max-width: 998px;
+    width: 100%;
     border-radius: 0.25em;
     overflow: hidden;
+}
+
+.row {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -20px;
 }
 
 /* 콘텐츠 영역 */
